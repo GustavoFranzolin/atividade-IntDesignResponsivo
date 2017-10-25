@@ -1,0 +1,116 @@
+/*todos elementos vão manter a borda para dentro do elemento, não para fora, não alterando o tamanho dos elemntos
+Ou seja, no exemplo do index2.html, o elemento container vai continuar tendo 1200 px, mesmo acrescim de 10px do border
+nos elementos .item*/
+
+*{
+box-sizing: border-box; 
+}
+
+.container{
+
+    width: 1200px;
+    height: 800px;
+    margin: 0 auto;
+}
+
+ /*.item{
+    width:600px;
+    float: left;
+    height: 100px;
+    background-color: orange;
+    border: 10px solid black; 
+}*/ 
+
+
+.row:after{
+    content: "";
+    display: table;
+    clear:both;
+}
+
+.item{
+    background-color: orange;
+ }
+
+
+.col{
+    position: relative;
+    min-height: 10px;
+    float: left;
+    padding: 0 30px 0 0;
+}
+
+.col-1{ width: 8.333%;}
+.col-2{ width: 16.667%;}
+.col-3{ width: 24.999%;}
+.col-4{ width: 33.333%;}
+.col-5{ width: 41.656%;}
+.col-6{ width: 49.989%;}
+.col-7{ width: 58.322%;}
+.col-8{ width: 66.655%;}
+.col-9{ width: 74.988%;}
+.col-10{ width: 83.321%;}
+.col-11{ width: 91.654%;}
+.col-12{ width: 100%;}
+
+
+/* Tela pequena */
+@media (max-width:479px){
+
+    .col-1 {  
+        width: 49.989%;
+    }
+    .col-2 {  
+        width: 49.989%;
+    }
+    .col-3 {  
+        width: 49.989%;
+    }
+    .col-4 {  
+        width: 58.322%;
+    }
+
+    .container{
+        max-width: 65%;
+    }
+}
+
+/* Celulares/Smartphones */
+@media (min-width:480px) and (max-width: 767px) {
+
+    .col-1 {  
+        width: 33.333%
+    }
+    .col-2 {
+        width: 33.333%
+    }
+    .col-3 {     
+        width: 49.989%;
+    }
+    .col-4 {     
+        width: 49.989%;
+    }
+
+.container{
+
+    max-width: 70%;
+}
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .col-1{
+
+        width: 16.667%;
+    }
+    .container{
+        
+        max-width: 80%;
+    }
+
+}
+
+@media (min-width: 1025px){
+
+.container{max-width: 90%;}    
+
+}
